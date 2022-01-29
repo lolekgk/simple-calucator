@@ -1,17 +1,32 @@
-def is_number(str):
-    pass
+#is numeric przyjmuje tylko liczby bez - i 
+def is_number(str): 
+    if str.isnumeric() == True:
+        return True
+    else:
+        return False
 
-
-def convert_number(str):
-    pass
+# wstawic powiazanie z is_number?
+def convert_number(str): #num_string
+    number = int(str) #num_string
+    return number
 
 
 def is_valid_operator(operator):
-    pass
+    operators_list = ['+', '-', '*', '/']
+    if operator in operators_list:
+        return True
+    else:
+        return False
 
 
 def ask_for_a_number(force_valid_input):
-    pass
+    str_num = input('Please provide a number! ')
+    is_number(str_num)
+    while force_valid_input == True:
+        if is_number(str_num):
+            return print(convert_number(str_num))
+        else:
+            return print(None)
 
 
 def ask_for_an_operator(force_valid_input):
@@ -26,5 +41,7 @@ def simple_calculator():
     pass
 
 
-if __name__ == '__main__':
-    simple_calculator()
+# if __name__ == '__main__':
+#     simple_calculator()
+
+ask_for_a_number(1)
